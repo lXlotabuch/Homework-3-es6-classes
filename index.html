@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Employee {
+        constructor(info) {
+          this._name = info.name;
+          this._age = info.age;
+          this._salary = info.salary;
+        }
+
+        get name() {
+          return this._name;
+        }
+
+        set name(name) {
+          this._name = name;
+        }
+
+        get age() {
+          return this._age;
+        }
+
+        set age(age) {
+          this._age = age;
+        }
+
+        get salary() {
+          return this._salary;
+        }
+
+        set salary(salary) {
+          this._salary = salary;
+        }
+      }
+
+      class Programmer extends Employee {
+        constructor(info) {
+          super(info);
+          this._lang = info.lang;
+        }
+
+        get salary() {
+          return this._salary * 3;
+        }
+
+        set salary(salary) {
+          this._salary = salary;
+        }
+      }
+
+      const info1 = {
+        name: "John",
+        age: 25,
+        salary: 3000,
+        lang: ["JS", "Python", "Java"],
+      };
+      const info2 = {
+        name: "Sara",
+        age: 18,
+        salary: 10000,
+        lang: ["Java"],
+      };
+      const info3 = {
+        name: "George",
+        age: 43,
+        salary: 1000,
+        lang: ["JS", "Python", "Java"],
+      };
+
+      let programmer1 = new Programmer(info1);
+      let programmer2 = new Programmer(info2);
+      let programmer3 = new Programmer(info3);
+
+      console.log(programmer1);
+      console.log(programmer2);
+      console.log(programmer3);
+    </script>
+  </body>
+</html>
